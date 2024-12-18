@@ -1,0 +1,206 @@
+/* App.css */
+
+/* Base Styles */
+body {
+  font-family: 'Poppins', 'Noto Sans KR', sans-serif;
+  background-color: #ebf7ff; /* Background color */
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+}
+
+.container {
+  text-align: center;
+  padding: 20px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; /* Center items horizontally */
+}
+
+/* Pop-Out Animation for URL BOX */
+@keyframes pop-out {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  80% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Vendor Prefixes for Better Browser Support (Optional) */
+@-webkit-keyframes pop-out {
+  0% {
+    -webkit-transform: scale(0.5);
+    opacity: 0;
+  }
+  80% {
+    -webkit-transform: scale(1.05);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Pop-Out Animation Class for URL BOX */
+.pop-out {
+  animation: pop-out 0.7s cubic-bezier(0.25, 0.3, 0.24, 0.93) 0.5s 1 forwards;
+  
+  /* Vendor Prefixes for Better Browser Support (Optional) */
+  -webkit-animation: pop-out 0.7s cubic-bezier(0.25, 0.3, 0.24, 0.93) 0.5s 1 forwards;
+}
+
+/* URL Box Styles */
+.url-box {
+  font-size: 2.5rem; /* Increased font size */
+  font-weight: bold;
+  margin-bottom: 20px; /* Space below title */
+  opacity: 0; /* Initially invisible */
+  transform: scale(0.5); /* Initially scaled down */
+}
+
+/* Pop-Out Animation Keyframes for Response Box */
+@keyframes response-pop-out {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  80% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Vendor Prefixes for Better Browser Support (Optional) */
+@-webkit-keyframes response-pop-out {
+  0% {
+    -webkit-transform: scale(0.5);
+    opacity: 0;
+  }
+  80% {
+    -webkit-transform: scale(1.05);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Pop-Out Animation Class for Response Box */
+.response-pop-out {
+  animation: response-pop-out 0.7s cubic-bezier(0.25, 0.3, 0.24, 0.93) 0s 1 forwards;
+  
+  /* Vendor Prefixes for Better Browser Support (Optional) */
+  -webkit-animation: response-pop-out 0.7s cubic-bezier(0.25, 0.3, 0.24, 0.93) 0s 1 forwards;
+}
+
+/* URL Form Styles */
+.url-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.url-input {
+  padding: 15px; /* Increased height of input */
+  width: 350px; /* Made input box wider */
+  margin-right: 10px;
+  border-radius: 8px; /* More rounded corners */
+  border: 1px solid #ddd;
+  font-size: 1.1rem; /* Larger text size */
+}
+
+.submit-button {
+  padding: 15px 30px; /* Larger button */
+  background-color: #007BFF;
+  color: #fff;
+  border: none;
+  border-radius: 8px; /* Rounder corners */
+  font-size: 1.1rem; /* Larger font size for button text */
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+.submit-button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+.submit-button:disabled {
+  background-color: #a0cfff; /* Light blue when disabled */
+  cursor: not-allowed;
+}
+
+/* Error Message Styles */
+.error-message {
+  color: red;
+  margin-top: 10px;
+  font-size: 1rem;
+}
+
+/* Loading Message Styles */
+.loading-message {
+  margin-top: 10px;
+  font-size: 1rem;
+}
+
+/* Response Box Styles */
+.response-box {
+  margin-top: 20px;
+  padding: 15px;
+  border: 3px solid #3498ff; /* Thin blue border */
+  border-radius: 8px; 
+  text-align: left; 
+  background-color: #f9f9f9; 
+  width: 80%; 
+  max-width: 900px; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+  word-wrap: break-word; 
+  opacity: 0; /* Initially invisible */
+  transform: scale(0.5); /* Initially scaled down */
+}
+
+/* Pop-Out Animation for Response Box */
+.response-box.response-pop-out {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Apply the animation when 'response-pop-out' class is added */
+.response-box.response-pop-out {
+  animation: response-pop-out 0.7s cubic-bezier(0.25, 0.3, 0.24, 0.93) 0s 1 forwards;
+  
+  /* Vendor Prefixes for Better Browser Support (Optional) */
+  -webkit-animation: response-pop-out 0.7s cubic-bezier(0.25, 0.3, 0.24, 0.93) 0s 1 forwards;
+}
+
+.response-box h3 {
+  margin-bottom: 10px; 
+  color: #3498ff; /* Makes the title blue */
+}
+
+.response-box p {
+  line-height: 1.5; 
+  font-size: 1rem; 
+}
+
+/* Accessibility: Disable animations for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .pop-out, .response-pop-out {
+    animation: none;
+    -webkit-animation: none;
+  }
+}
